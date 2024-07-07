@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de funcionarios</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listado de Funcionarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cedula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>EPS</th>
+                <th>FP</th>
+                <th>Estado civil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (funcionarios.length > 0) { %>
+                <% funcionarios.forEach(function(funcionario) { %>
+                    <tr>
+                        <td><%= funcionario.IDusuario %></td>
+                        <td><%= funcionario.cedula %></td>
+                        <td><%= funcionario.nombres %></td>
+                        <td><%= funcionario.apellidos %></td>
+                        <td><%= funcionario.correo %></td>
+                        <td><%= funcionario.EPS %></td>
+                        <td><%= funcionario.FP %></td>
+                        <td><%= funcionario.estadocivil %></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="8">No se encontraron funcionarios</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario de factura</h2>
+    <form id="formulariofactura"  action="/fac"  method="POST">
+
+        <label for="IDfacturas">ID de factura:</label>
+        <input type="number" name="IDfacturas" id="IDfacturas"  required><br><br>
+
+        <label for="Nombrep">Nombre del proveedor:</label>
+        <input type="text" name="Nombrep" id="Nombrep"  required><br><br>
+
+        <label for="Descripción_factura">Descripcion de la factura:</label>
+        <input type="text" name="Descripción_factura" id="Descripción_factura"  required><br><br>
+
+        <label for="Total_factura">Total factura:</label>
+        <input type="number" name="Total_factura" id="Total_factura"  required><br><br>
+
+        
+        <input type="submit" value="Generar factura">
+
+
+
+    </form>
+</body>
+</html>
