@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../view')));
 
 // Configurar EJS como motor de vistas
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../view')); 
+app.set('views', path.join(__dirname, '../view'));
 
 // Ruta para obtener el listado de funcionarios
 app.get('/', (req, res) => {

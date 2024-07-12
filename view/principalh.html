@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
+    <title>Página principal</title>
 </head>
 <body>
-
     <h1>Bienvenido</h1>
+    <p>Haga clic en el botón para ver el listado de funcionarios:</p>
+    <button id="lis"  onclick="redirectToListado()">Ver Listado de Funcionarios</button>
+    <button id="lis"  onclick="redirectTofuncionarios()">Registrar funcionarios</button>
 
-    <form action="">
+    <script>
+        function redirectToListado() {
+            window.location.href = '/listado-funcionarios';
+        }
 
-        <button onclick="location.href='/fun'">Registrar funcionarios</button><br>
-        <button onclick="location.href=''">Listado de funcionarios</button><br>
-
-
-
-
-
-    </form>
-    
+        function redirectTofuncionarios() {
+            window.location.href = '/funcionarios';
+        }
+    </script>
 </body>
 </html>
+

@@ -83,7 +83,7 @@ app.post('/login', (req, res) => {
         if (!isMatch) {
             return res.status(400).send('Contraseña incorrecta');
         }
-        res.send('Inicio de sesion exitoso');
+        res.redirect('/principal');
 
     });
 });
