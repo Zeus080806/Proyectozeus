@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <link rel="stylesheet" href="iniciof.css">
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p>Haga clic en el botón para ver el listado de funcionarios:</p>
+    <button id="lis"  onclick="redirectToListado()">Registrar facturas</button>
+    <button id="lis"  onclick="redirectTofuncionarios()">Listado de facturas</button>
+
+    <script>
+        function redirectToListado() {
+            window.location.href = '/registrar-factura';
+        }
+
+        function redirectTofuncionarios() {
+            window.location.href = '/listado-facturas';
+        }
+    </script>
+</body>
+</html>

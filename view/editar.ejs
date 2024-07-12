@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Funcionario</title>
+</head>
+<body>
+    <h1>Editar Funcionario</h1>
+    <form action="/editar-funcionario/<%= funcionario.IDusuarios %>" method="POST">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" value="<%= funcionario.cedula %>" required>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" value="<%= funcionario.nombres %>" required>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" value="<%= funcionario.apellidos %>" required>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" value="<%= funcionario.correo %>" required>
+        <label for="EPS">EPS:</label>
+        <input type="text" id="EPS" name="EPS" value="<%= funcionario.EPS %>" required>
+        <label for="FP">FP:</label>
+        <input type="text" id="FP" name="FP" value="<%= funcionario.FP %>" required>
+        <label for="hijos">Hijos:</label>
+        <input type="text" id="hijos" name="hijos" value="<%= funcionario.hijos %>" required>
+        <label for="estadocivil">Estado Civil:</label>
+        <input type="text" id="estadocivil" name="estadocivil" value="<%= funcionario.estadocivil %>" required>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

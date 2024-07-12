@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar factura</title>
+</head>
+<body>
+    <h1>Editar Factura</h1>
+    <form action="/actualizar-factura/<%= factura.IDfacturas %>?_method=PUT" method="POST">
+        <label for="Nombrep">Nombre del Producto:</label><br>
+        <input type="text" id="Nombrep" name="Nombrep" value="<%= factura.Nombrep %>" required><br><br>
+
+        <label for="Descripción_factura">Descripción de la Factura:</label><br>
+        <textarea id="Descripción_factura" name="Descripción_factura" rows="4" cols="50" required><%= factura.Descripción_factura %></textarea><br><br>
+
+        <label for="Total_factura">Total de la Factura:</label><br>
+        <input type="number" id="Total_factura" name="Total_factura" value="<%= factura.Total_factura %>" required><br><br>
+
+        <button type="submit">Actualizar Factura</button>
+    </form>
+
+    
+</body>
+</html>
