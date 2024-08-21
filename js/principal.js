@@ -1,13 +1,19 @@
 const express = require('express');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const path = require('path');
 const conexion = require('./bd');
+const methodOverride = require('method-override');
 
 const app = express();
 const port = 3000;
 
 //manejar datos del formulario
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json());
+
+//configurar method-override como middleware
+app.use(methodOverride('_method'));
 
 
 // configurar express para servir archivos estaticos
@@ -121,16 +127,22 @@ app.post('/editar-funcionario/:id', (req, res) => {
 });
 
 // Ruta para manejar la eliminación de funcionario (DELETE)
-app.post('/eliminar-funcionario/:id', (req, res) => {
-    const id = req.params.id;
+app.delete('/funcionarios/:id', (req, res) => {
+    const DELETE_FUNCIONARIO_QUERY = 'DELETE FROM funcionarios WHERE IDusuarios = ?';
+    const usuarioid = req.params.id;
 
-    conexion.query('DELETE FROM funcionarios WHERE IDusuarios = ?', [id], (err, result) => {
+    console.log(`ID recibido para eliminación: ${usuarioid}`);
+
+    conexion.query(DELETE_FUNCIONARIO_QUERY, [usuarioid], (err, result) => {
         if (err) {
-            console.log('Error al eliminar el funcionario:', err.stack);
-            return res.status(500).send('Error al eliminar el funcionario');
+            console.error(err);
+            res.status(500).send('Error al eliminar el funcionario');
+        }else if (result.affectedRows === 0) {
+            res.status(400).send('Funcionario no encontrado');
+        }else {
+            res.status(200).send('Funcionario eliminado correctamente');
         }
-        console.log('Funcionario eliminado con exito');
-        return res.send('Funcionario eliminado con exito');
+        
     });
 });
 
@@ -151,10 +163,16 @@ app.get('/listado-funcionarios', (req, res) => {
     });
 });
 
-
-
-
 //Iniciar el servidor 
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+//if (require.main === module) {
+//app.listen(port, () => {
+    //console.log(`Servidor escuchando en http://localhost:${port}`);
+//});
+//}
+
+const server = app.listen(3000, () => {
+    console.log('Servidor escuchando en http://localhost:3000');
 });
+
+//exportar la aplicacion para las pruebas 
+module.exports = {app, server};

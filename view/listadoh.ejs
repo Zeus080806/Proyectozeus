@@ -49,10 +49,13 @@
                         <td><%= funcionario.FP %></td>
                         <td><%= funcionario.estadocivil %></td>
                         <td>
+                            <form action="/funcionarios/<%= funcionario.IDusuarios %>?_method=DELETE" method="POST">
+                                <button type="submit">Eliminar</button>
+                            </form>
+
+
                             <a href="/editar-funcionario/<%= funcionario.IDusuarios %>">Editar</a>
-                    <form action="/eliminar-funcionario/<%= funcionario.IDusuarios %>" method="POST" style="display:inline;">
-                        <button type="submit">Eliminar</button>
-                    </form>
+                   
 
                         </td>
                     </tr>

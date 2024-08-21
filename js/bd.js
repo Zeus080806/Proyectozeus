@@ -26,11 +26,4 @@ module.exports = conexion;
 
 
 
-//cerrar la conexion a la base de datos
-//conexion.end((err)=>{
-    //if(err){
-       // console.error('Error al cerrar la conexion:', err.stack);
-        //return;
-    //}
-    //console.log('Conexion cerrada con exito');
-//});
+

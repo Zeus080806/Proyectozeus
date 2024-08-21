@@ -1,3 +1,5 @@
+@import "../node_modules/bootstrap/scss/functions";
+
 body {
     background-color:  #5cb85c; 
     font-family: Arial, sans-serif;
@@ -67,6 +69,6 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    background-color: #31708f;
 }
 

@@ -140,9 +140,9 @@ app.delete('/facturas/:id', (req, res) => {
     conectar.query(DELETE_FACTURA_QUERY, [facturaid], (err, result) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error al eliminar la fcatura');
+            res.status(500).send('Error al eliminar la factura');
         }else if (result.affectedRows === 0) {
-            res.status(404).send('Factura no enocntrada');
+            res.status(404).send('Factura no encontrada');
         } else {
             res.status(200).send('Factura eliminada correctamente');
         }
